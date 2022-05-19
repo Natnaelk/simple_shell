@@ -1,16 +1,16 @@
-#include "shell.h"
-
+#include "holberton.h"
 /**
- * _puts - Prints a string to stdout
- * @str: String to be printed
- *
- * Return: Number of chars printed
+ * _puts - prints a string
+ * @str: pointer to the string to print
+ * Return: void
 */
-int _puts(char *str)
+
+void _puts(char *str)
 {
-	int len = _strlen(str);
-
-	write(STDOUT_FILENO, str, len);
-
-	return (len);
+int i = 0;
+while (str[i])
+{
+	_putchar(str[i]);
+	i++;
+}
 }
