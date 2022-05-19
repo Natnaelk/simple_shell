@@ -1,1 +1,1 @@
-Making our own shell
+Simple shell project
