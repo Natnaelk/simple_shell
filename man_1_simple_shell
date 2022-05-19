@@ -1,44 +1,45 @@
-.TH simple_shell "25 August 2021" "V1.0" "simple_shell man page"
-.SH NAME				
-.B simple_shell - Simple Unix comand interpreter	
-simple_shell: the shell or command interpreter or command interpreter is the computer program 
-that provides a user interface to access the services of the operating system.
-
-.SH SYNOPSYS				
-.B #include \fB"shell.h"
-
-./hsh
-/bin/[command] [option]
-[command] [option]
-
+.TH simple_shell "1.0" "5 MAy 2022" "simple_shell man page" "simple_shell man page"
+.SH NAME
+.B shell
+- a standard command interpreter similar to the GNU Bourne-Again SHell (sh).
+.SH SYNOPSIS
+#include "holberton.h"
+.PP
+.shell
+.PP
+shell [option_name] [argument ...]
 .SH DESCRIPTION
-simple_shell es un intérprete de línea de comandos, o shell, utilizando como idea principalel
-primer shell de Unix escrito por Ken Thompson. 
-Este shell es una version ligera, incluye la funcionalidad básica de una interfaz de línea de
-comandos tradicional similar a Unix.
-simple_shell fue diseñado para ser ejecutado en el entorno Linux.
+shell is a command programming language that executes commands read from a terminal or a file. It is the program that is running when a user logs into the system.
+.SH INVOCATION
+If no arguments are present and if the standard input of the shell is connected to a terminal, the shell is considered an interactive shell.
+.PP
+If the standard input is used with a pipeline operator, |, to connect the command, such as echo "qwerty" | ./shell, then the shell is in non-interactive mode.
+.SH LEXICAL STRUCTURE
+The shell reads input in terms of lines from a file and breaks it up into words at whitespace (blanks and tabs).
+.SH RETURN
+Upon successful return, the shell will always return a 0 for success. If the shell program fails when a command is entered incorrectly or does not exist in the $PATH, then shell program will exit out of the child process and display an error message corresponding to the error the user committed and return with a prompt.
+.SH BUILT-INS
+.PP
+env - When entered, shell prints the current environment to standard output.
+.PP
+exit - When entered, shell exits out of the shell program.
 
-.SH EXAMPLES
-$  /bin/ls -l
-    -rwxr--r-- 1 root root   841 Aug 22 23:23 token_maker.c
-    -rwxr-xr-x 1 root root 17408 Aug 22 22:02 simple_shell
-    -rwxr--r-- 1 root root  2207 Aug 22 22:02 simple_shell.c
-    -rw-r--r-- 1 root root  1160 Aug 22 23:23 shell.h
-    -r--r--r-- 1 root root  1409 Aug 22 22:24 man_1_simple_shell
-
-$  ls -l
-    -rwxr--r-- 1 root root   841 Aug 22 23:23 token_maker.c
-    -rwxr-xr-x 1 root root 17408 Aug 22 22:02 simple_shell
-    -rwxr--r-- 1 root root  2207 Aug 22 22:02 simple_shell.c
-    -rw-r--r-- 1 root root  1160 Aug 22 23:23 shell.h
-    -r--r--r-- 1 root root  1409 Aug 22 22:24 man_1_simple_shell
-
-.SH AUTHOR'S				
--Written by Karla Diaz <karla.diaz@pucp.pe> and Edgar Flores <edgarxot@gmail.com>
-
+.SH FILES
+.I
+.sp
+$HOME/.profile
+.I
+.sp
+/etc/profile
+.I
+.sp
+/etc/shells
+.SH ALSO SEE
+.PP
+man sh, execve(2), environ
+.SH NOTES
+All files and code used in .shell were created and compiled on Ubuntu 14.04.4 LTS using GCC 4.8.4
 .SH BUGS
-There were no errors in the testing time of this code (August 25, 2021).
-We would appreciate if you inform us of any problems encountered.
-
-.SH SEE ALSO
-sh
+There are many features and builtin commands that are not implimented in this simple shell such as aliases, cd, and logical operators. When 
+.SH AUTHOR
+Em432 & Joshman00
